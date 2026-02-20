@@ -1,5 +1,5 @@
 # Set up the BCL Convert environment
-This repository has minimul docker image for [bclconvert](https://help.dragen.illumina.com/product-guide/dragen-v4.4/bcl-conversion).
+This repository has minimul docker image for [bclconvert](https://support.illumina.com/sequencing/sequencing_software/bcl-convert.html).
 
 ## Requirements
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
