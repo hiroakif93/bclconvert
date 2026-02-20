@@ -24,3 +24,8 @@ docker run --rm \
   --no-lane-splitting true \
   --force
 ```
+
+## Maintain
+- Please change the following variables in `bclconvert.Dockerfile`:
+  - In line4, `ARG BCL_RPM="bcl-convert-4.2.7-2.el8.x86_64.rpm"`
+  
