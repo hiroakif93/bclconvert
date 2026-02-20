@@ -8,9 +8,13 @@ https://docs.docker.com/engine/install/ubuntu/
 1. Download `bclconvert.Dockerfile`.
 2. Run the following commnad:  
 `docker build -f bclconvert.Dockerfile -t bclconvert .`
+  -f: path to Dockerfile  
+  -t: container name  
 3. To verify that the image was built correctly, run:  
 `docker run --rm bclconvert -V`  
 This will print the BCL Convert version.
+  --rm: remove the container after the command finishes
+  -V: a option of bclconvert printing the version. 
 
 ## Run
 Run the following command (e.g., for NovaSeq X Plus):
@@ -24,8 +28,13 @@ docker run --rm \
   --no-lane-splitting true \
   --force
 ```
+  -v: mount the directory of host PC (local PC). The path to virtual directory is /data.
+  --bcl-input-directory: path to input directory in virtual directory.
+  --output-directory: path to output directory in virtual directory.
+  --no-sample-sheet: do not use sample sheet
+  --no-lane-splitting: do not split lanes
+  --force: force overwrite output directory.
 
-## Maintain
+## Maintainance
 - Please change the following variables in `bclconvert.Dockerfile`:
   - In line4, `ARG BCL_RPM="bcl-convert-4.2.7-2.el8.x86_64.rpm"`
-  
