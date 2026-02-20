@@ -28,8 +28,6 @@ RUN wget -O /opt/bcl-convert.rpm "${BCL_URL}" && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
-RUN bcl-convert -V
-
 WORKDIR /data
 
 ENTRYPOINT ["bcl-convert"]

@@ -1,5 +1,0 @@
-# build Docker environment
-docker build -f bclconvert.Dockerfile -t bclconvert .
-
-# How to use
-
