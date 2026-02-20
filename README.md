@@ -1,11 +1,11 @@
 # Set up the BCL Convert environment
+This repository has minimul docker image for [bclconvert](https://support.illumina.com/sequencing/sequencing_software/bcl-convert.html).
 
 ## Requirements
-- Docker  
-https://docs.docker.com/engine/install/ubuntu/
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Build  
-1. Download `bclconvert.Dockerfile`.
+1. Download `bclconvert.Dockerfile` from this repo.
 2. Run the following commnad:  
 `docker build -f bclconvert.Dockerfile -t bclconvert .`
   -f: path to Dockerfile  
@@ -17,6 +17,7 @@ This will print the BCL Convert version.
   -V: a option of bclconvert printing the version. 
 
 ## Run
+### 1. Run in CLI.
 Run the following command (e.g., for NovaSeq X Plus):
 ```
 docker run --rm \
