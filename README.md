@@ -1,8 +1,8 @@
 # Set up the BCL Convert environment
+This repository has minimul docker image for [bclconvert](https://help.dragen.illumina.com/product-guide/dragen-v4.4/bcl-conversion).
 
 ## Requirements
-- Docker  
-https://docs.docker.com/engine/install/ubuntu/
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Build  
 1. Download `bclconvert.Dockerfile` from this repo.
