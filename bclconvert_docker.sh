@@ -1,14 +1,15 @@
 
-mount_path="/home/user/RUN_FOLDER"
-out_path="FASTQ_undmx"
+MOUNT_PATH="/home/user/RUN_FOLDER"
+OUT_PATH="FASTQ_undmx"
 
-##################3
+##################
 docker run --rm \
-  -v "$mount_path" \
+  --ulimit nofile=1048576:1048576 \
+  -v "${MOUNT_PATH}:/data" \
+  --user "$(id -u):$(id -g)" \
   bclconvert \
-  --bcl-input-directory /data/. \
-  --output-directory /data/${out_path} \
-  --no-sample-sheet true \
+  --bcl-input-directory /data \
+  --output-directory "/data/${OUT_PATH}" \
   --no-lane-splitting true \
-  --force
-  
+  --force \
+  --sample-sheet /opt/Dummy.csv

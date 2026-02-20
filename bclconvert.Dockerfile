@@ -22,6 +22,8 @@ RUN dnf -y update && \
 
 WORKDIR /opt
 
+COPY Dummy.csv /opt/Dummy.csv
+
 RUN wget -O /opt/bcl-convert.rpm "${BCL_URL}" && \
     dnf -y install /opt/bcl-convert.rpm && \
     rm -f /opt/bcl-convert.rpm && \

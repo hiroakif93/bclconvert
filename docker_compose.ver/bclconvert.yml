@@ -1,0 +1,10 @@
+services:
+  bclconvert:
+    image: bclconvert
+    volumes:
+      - ${MOUNT_PATH}:/data
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
+    user: "${UID}:${GID}"
