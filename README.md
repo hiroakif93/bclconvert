@@ -13,17 +13,27 @@ This repository has minimul docker image for [bclconvert](https://support.illumi
 This will print the BCL Convert version.
 
 ## Run
+### 1. Run in CLI.
 Run the following command (e.g., for NovaSeq X Plus):
 ```
 docker run --rm \
-  -v "$mount_path" \
+  -v "$mount_path":/data \
   bclconvert \
-  --bcl-input-directory /data/. \
+  --bcl-input-directory /data \
   --output-directory /data/${out_path} \
   --no-sample-sheet true \
   --no-lane-splitting true \
   --force
 ```
+### 2. Run interactively
+Run the following command:
+```
+docker run --rm -it \                                                
+  --entrypoint /bin/bash \
+  -v "$mount_path:/data" \
+  bclconvert
+```
+To exit interactive mode, type `exit`.
 
 ## Maintain
 - Please change the following variables in `bclconvert.Dockerfile`:
