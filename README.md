@@ -11,3 +11,16 @@ https://docs.docker.com/engine/install/ubuntu/
 3. To verify that the image was built correctly, run:  
 `docker run --rm bclconvert -V`  
 Then you can confirm bclconvert version.
+
+## Run
+Run the following command (e.g. NovaseqXplus),
+```
+docker run --rm \
+  -v "$mount_path" \
+  bclconvert \
+  --bcl-input-directory /data/. \
+  --output-directory /data/${out_path} \
+  --no-sample-sheet true \
+  --no-lane-splitting true \
+  --force
+```
