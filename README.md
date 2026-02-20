@@ -5,7 +5,7 @@
 https://docs.docker.com/engine/install/ubuntu/
 
 ## Build  
-1. Download `bclconvert.Dockerfile`.
+1. Download `bclconvert.Dockerfile` from this repo.
 2. Run the following commnad:  
 `docker build -f bclconvert.Dockerfile -t bclconvert .`
 3. To verify that the image was built correctly, run:  
