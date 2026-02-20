@@ -1,0 +1,16 @@
+Experiment="MIG_260219"
+
+data_dir="/data/Kawatabi_root/NovaseqXplus_260202/X207SC25124554-Z01-F003/260108_LH00515_0218_B23G5HVLT3.BCL/260108_LH00515_0218_B23G5HVLT3"
+out_dir="${data_dir}/${Experiment}"
+
+
+##################3
+docker start -ai bclconvert
+
+bcl-convert \
+  --bcl-input-directory ${data_dir} \
+  --output-directory /${out_dir} \
+  --no-sample-sheet true \
+  --no-lane-splitting true \
+  --force
+
