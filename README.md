@@ -20,20 +20,31 @@ This will print the BCL Convert version.
 Run the following command (e.g., for NovaSeq X Plus):
 ```
 docker run --rm \
-  -v "$mount_path" \
+  --user "$(id -u)":"$(id -g)" \
+  -v "$mount_path":/data \
   bclconvert \
-  --bcl-input-directory /data/. \
+  --bcl-input-directory /data \
   --output-directory /data/${out_path} \
   --no-sample-sheet true \
   --no-lane-splitting true \
   --force
 ```
+  --user: to make it executable
   -v: mount the directory of host PC (local PC). The path to virtual directory is /data.
   --bcl-input-directory: path to input directory in virtual directory.
   --output-directory: path to output directory in virtual directory.
   --no-sample-sheet: do not use sample sheet
   --no-lane-splitting: do not split lanes
   --force: force overwrite output directory.
+
+### 2. Run interactively
+Run the following command:
+```
+docker run --rm -it \                                                
+  --entrypoint /bin/bash \
+  -v "$mount_path:/data" \
+  bclconvert
+```
 
 ## Maintainance
 - Please change the following variables in `bclconvert.Dockerfile`:
